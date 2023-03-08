@@ -1,498 +1,440 @@
-<!DOCTYPE html>
-<html lang="ru">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="static/css/background.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/head.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/freeze/freeze-ico-lighting.css" type="text/css" />
-  <link rel="stylesheet" href="static/css/card-style.css" type="text/css" />
-  <title>Меню</title>
-</head>
-
-<body>
-  <div>
-    <!--img class="background" src="images/monoback.jpg" alt=""-->
-    <header class="header">
-      <!--ЛЕВАЯ ЛИНИЯ-->
-
-      <div class="header-line-90-left"></div>
-      <!--ЛОГОТИП-->
-      <a href="index.html">
-        <div class="logo-img"><img src="static/images/logo.png" alt="Эстетика вкусов" /></div>
-      </a>
-      <!--ПРАВАЯ ЛИНИЯ-->
-      <div class="header-line-270-right">
-        <nav>
-          <!--Меню-->
-          <div class="menu"><a href="/hot-menu"></a></div>
-          <a href="/hot-menu">
-            <img class="menu-img" src="static/images/ico/hot-food.png" alt="Горячие блюда" />
-          </a>
-          <!--Полуфабрикаты-->
-          <div class="freeze"><a href="/freeze-menu"></a></div>
-          <a href="/freeze-menu">
-            <img class="freeze-img" src="static/images/ico/freeze.png" alt="" />
-          </a>
-          <!--Кейтеринг-->
-          <div class="keitering"><a href="/keitering"></a></div>
-          <a href="/keitering">
-            <img class="keitering-img" src="static/images/ico/keitering.png" alt="" />
-          </a>
-          <!--Контакты-->
-          <div class="contacts"><a href="/contacts"></a></div>
-          <a href="/contacts">
-            <img class="contacts-img" src="static/images/ico/mail.png" alt="" />
-          </a>
-          <!--Корзина-->
-          <a class="bucket-a" href="/bucket">
-            <img class="bucket" src="static/images/ico/shopping-ico.png" alt="" />
-          </a>
-        </nav>
-      </div>
-    </header>
+{% extends "basic/headfoot.html" %}
 
 
-    <main class="main">
-      <div class="border-table">
-        <div class="article-title">
-          <p>ГАЛУШКИ</p>
-        </div>
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/галушки м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>500 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>классические</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/галушки кукурузные.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>500 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>кукурузные</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/ракушки с мясом.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>600 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>ракушки</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
+{% block link %}
+<link rel="stylesheet" href="static/css/freeze/freeze-ico-lighting.css" type="text/css" />
+<link rel="stylesheet" href="static/css/card-style.css" type="text/css" />
+{% endblock %}
 
-        <div class="article-title ">
-          <p>МАНТЫ</p>
-        </div>
+{% block title %}Полуфабрикаты {% endblock %}
 
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/манты м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с тыквой</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/манты с бараниной.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с бараниной</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/манты с говядиной.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с говядиной</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--4-->
-          <article class="product-card">
-            <img src="images/menu/freeze/манты с рубленым мясом.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1200 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с рубленным мясом</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
+{% block main %}
+<div class="border-table">
 
-        <div class="article-title ">
-          <p>ВАРЕНИКИ</p>
-        </div>
-
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/вареники с творогом.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>700 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с творогом</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/вареники с луком.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>700 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с творогом и луком</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/вареники с вишней.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с вишней</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--4-->
-          <article class="product-card">
-            <img src="images/menu/freeze/вареники с картошкой.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>600 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с картошкой</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--5-->
-          <article class="product-card">
-            <img src="images/menu/freeze/вареники с грибами и картошкой.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>700 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с картошкой и грибами</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
-
-        <div class="article-title ">
-          <p>ПЕЛЬМЕНИ</p>
-        </div>
-
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/пельмени_говядина_индейка_баранина_детские.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>говядина</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/пельмени с индейкой.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>индейка</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/пельмени с бараниной.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>баранина</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--4-->
-          <article class="product-card">
-            <img src="images/menu/freeze/пельмени детские.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1200 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>детские</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
-
-        <div class="article-title ">
-          <p>КУРЗЕ</p>
-        </div>
-
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/курзе м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с мясом</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/курзе с творогом.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с творогом</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/курзе с картошкой.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>700 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с картошкой</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--4-->
-          <article class="product-card">
-            <img src="images/menu/freeze/курзе с капустой.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>700 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>с капустой</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
-
-        <div class="article-title ">
-          <p>ДРУГОЕ</p>
-        </div>
-
-        <div class="article-container">
-          <!--1-->
-          <article class="product-card">
-            <img src="images/menu/freeze/долма м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>Долма</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--2-->
-          <article class="product-card">
-            <img src="images/menu/freeze/перцы м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>Фаршированный перец</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--3-->
-          <article class="product-card">
-            <img src="images/menu/freeze/фрикадельки_инд_слэш_кур_слэш_гов.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>1000 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>Фрикадельки</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--4-->
-          <article class="product-card">
-            <img src="images/menu/freeze/голубцы м.jpg" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>Голубцы</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-          <!--5-->
-          <article class="product-card">
-            <img src="images/menu/freeze/" alt="" class="img-product">
-            <div class="price">
-              <p>800 ₽</p>
-            </div>
-            <div class="product-name">
-              <p>Тефтели</p>
-            </div>
-            <div class="add_button"><button class="add">+ Добавить</button></div>
-          </article>
-        </div>
-      </div>
-
-      <div class="article-title ">
-        <p>ФЕРМЕРСКИЕ ПРОДУКТЫ</p>
-      </div>
-      <div class="article-container">
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>600 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Домашняя курица 1 кг</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>1000 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Отварная баранья голова и ноги</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>700 ₽</p>
-          </div>
-          <div class="product-name">
-            <p >Куриный фарш 1кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>800 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Фарш из говядины 1кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>1600 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Сушеное мясо 1кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>2000 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Сушеная конина 1кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="images/menu/колбаса.jpg" alt="" class="img-product">
-          <div class="price">
-            <p>1500 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Колбасы с рубленым мясом 1 кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>1200 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Колбасы с фаршем 1кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>800 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>Говяжий язык 1кг</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-
-        <article class="product-card">
-          <img src="" alt="" class="img-product">
-          <div class="price">
-            <p>600 ₽</p>
-          </div>
-          <div class="product-name">
-            <p>1 баар в заморозке 0.5кг.</p>
-          </div>
-          <div class="add_button"><button class="add">+ Добавить</button></div>
-        </article>
-    </main>
-
+  <div class="article-title">
+    <p>ГАЛУШКИ</p>
   </div>
-</body>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/галушки м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>500 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>классические</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/галушки кукурузные.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>500 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>кукурузные</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/ракушки с мясом.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>600 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>ракушки</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
 
-</html>
+  <div class="article-title ">
+    <p>МАНТЫ</p>
+  </div>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/манты м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с тыквой</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/манты с бараниной.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с бараниной</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/манты с говядиной.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с говядиной</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--4-->
+    <article class="product-card">
+      <img src="images/menu/freeze/манты с рубленым мясом.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1200 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с рубленным мясом</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
 
-<!-- div.atricle-title>p 
-div.article-container-->
-<!-- article.product-card>(img.img-product[src="images/menu/galushki-sq.jpg"]+(div.price>p{$00 R})+(div.product-name>p{Галушки})+(div.add_button>button.add{+ Добавить})) -->
+  <div class="article-title ">
+    <p>ВАРЕНИКИ</p>
+  </div>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/вареники с творогом.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с творогом</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/вареники с луком.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с творогом и луком</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/вареники с вишней.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с вишней</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--4-->
+    <article class="product-card">
+      <img src="images/menu/freeze/вареники с картошкой.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>600 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с картошкой</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--5-->
+    <article class="product-card">
+      <img src="images/menu/freeze/вареники с грибами и картошкой.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с картошкой и грибами</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
+
+  <div class="article-title ">
+    <p>ПЕЛЬМЕНИ</p>
+  </div>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/пельмени_говядина_индейка_баранина_детские.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>говядина</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/пельмени с индейкой.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>индейка</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/пельмени с бараниной.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>баранина</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--4-->
+    <article class="product-card">
+      <img src="images/menu/freeze/пельмени детские.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1200 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>детские</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
+
+  <div class="article-title ">
+    <p>КУРЗЕ</p>
+  </div>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/курзе м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с мясом</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/курзе с творогом.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с творогом</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/курзе с картошкой.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с картошкой</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--4-->
+    <article class="product-card">
+      <img src="images/menu/freeze/курзе с капустой.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>с капустой</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
+
+  <div class="article-title ">
+    <p>ДРУГОЕ</p>
+  </div>
+  <div class="article-container">
+    <!--1-->
+    <article class="product-card">
+      <img src="images/menu/freeze/долма м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Долма</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--2-->
+    <article class="product-card">
+      <img src="images/menu/freeze/перцы м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Фаршированный перец</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--3-->
+    <article class="product-card">
+      <img src="images/menu/freeze/фрикадельки_инд_слэш_кур_слэш_гов.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Фрикадельки</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--4-->
+    <article class="product-card">
+      <img src="images/menu/freeze/голубцы м.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Голубцы</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+    <!--5-->
+    <article class="product-card">
+      <img src="images/menu/freeze/" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Тефтели</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
+
+  <div class="article-title ">
+    <p>ФЕРМЕРСКИЕ ПРОДУКТЫ</p>
+  </div>
+  <div class="article-container">
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>600 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Домашняя курица 1 кг</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>1000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Отварная баранья голова и ноги</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>700 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Куриный фарш 1кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Фарш из говядины 1кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>1600 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Сушеное мясо 1кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>2000 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Сушеная конина 1кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="images/menu/колбаса.jpg" alt="" class="img-product">
+      <div class="price">
+        <p>1500 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Колбасы с рубленым мясом 1 кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>1200 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Колбасы с фаршем 1кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>800 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>Говяжий язык 1кг</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+
+    <article class="product-card">
+      <img src="" alt="" class="img-product">
+      <div class="price">
+        <p>600 ₽</p>
+      </div>
+      <div class="product-name">
+        <p>1 баар в заморозке 0.5кг.</p>
+      </div>
+      <div class="add_button"><button class="add">+ Добавить</button></div>
+    </article>
+  </div>
+</div>
+{% endblock %}

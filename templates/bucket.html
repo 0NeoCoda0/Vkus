@@ -1,56 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends "basic/headfoot.html" %}
+{% block link %}
+<link rel="stylesheet" href="static/css/bucket/bucket-ico-lighting.css" type="text/css">
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome, firefox" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="static/css/background.css" type="text/css" />
-    <link rel="stylesheet" href="static/css/head.css" type="text/css" />
-    <link rel="stylesheet" href="styles/bucket/bucket-ico-lighting.css" type="text/css">
-    <link rel="stylesheet" href="styles/bucket/bucket-body.css" type="text/css">
-    <title>Кейтеринг</title>
-</head>
+{% block title %}О нас{% endblock %}
 
-<body>
-    <header class="header">
-        <!--ЛЕВАЯ ЛИНИЯ-->
-  
-        <div class="header-line-90-left"></div>
-        <!--ЛОГОТИП-->
-        <a href="index.html">
-          <div class="logo-img"><img src="static/images/logo.png" alt="Эстетика вкусов" /></div>
-        </a>
-        <!--ПРАВАЯ ЛИНИЯ-->
-        <div class="header-line-270-right">
-          <nav>
-            <!--Меню-->
-            <div class="menu"><a href="/hot-menu"></a></div>
-            <a href="/hot-menu">
-              <img class="menu-img" src="static/images/ico/hot-food.png" alt="Горячие блюда" />
-            </a>
-            <!--Полуфабрикаты-->
-            <div class="freeze"><a href="/freeze-menu"></a></div>
-            <a href="/freeze-menu">
-              <img class="freeze-img" src="static/images/ico/freeze.png" alt="" />
-            </a>
-            <!--Кейтеринг-->
-            <div class="keitering"><a href="/keitering"></a></div>
-            <a href="/keitering">
-              <img class="keitering-img" src="static/images/ico/keitering.png" alt="" />
-            </a>
-            <!--Контакты-->
-            <div class="contacts"><a href="/contacts"></a></div>
-            <a href="/contacts">
-              <img class="contacts-img" src="static/images/ico/mail.png" alt="" />
-            </a>
-            <!--Корзина-->
-            <a class="bucket-a" href="/bucket">
-              <img class="bucket" src="static/images/ico/shopping-ico.png" alt="" />
-            </a>
-          </nav>
-        </div>
-      </header>
-</body>
+{% block main %}
 
-</html>
+{% endblock  %}
