@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product</title>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name() }}
+        </p>
+        <p>
+            {{ form.price.label }}<br>
+            {{ form.price() }}
+        </p>
+        <p>
+            {{ form.weight.label }}<br>
+            {{ form.weight() }}
+        </p>
+        <p>
+            {{ form.quantity.label }}<br>
+            {{ form.quantity() }}
+        </p>
+        <p>
+            {{ form.image.label }}<br>
+            {{ form.image() }}
+        </p>
+        <p>
+            {{ form.category.label }}<br>
+            {{ form.category() }}
+        </p>
+        <p>
+            {{ form.type.label }}<br>
+            {{ form.type() }}
+        </p>
+        <p>
+            {{ form.composition.label }}<br>
+            {{ form.composition() }}
+        </p>
+        <p>
+            {{ form.calories.label }}<br>
+            {{ form.calories() }}
+        </p>
+        <p>
+            <input type="submit" value="Save">
+            <a href="{{ url_for('index') }}">Cancel</a>
+        </p>
+    </form>
+    {% for field, errors in form.errors.items() %}
+    <div class="alert alert-danger">
+        <ul>
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
+</body>

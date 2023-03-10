@@ -1,15 +1,11 @@
-import base64
-from flask import Flask, request
+from routes.cards import bp_card_edit as auth_bp
+from flask import Flask
 from flask import render_template
-from flask_sqlalchemy import SQLAlchemy
-from models.products import Product
-
-login_data = 'postgresql://neocoda:grand_user@localhost/vkus'
+from models.db_requests import get_data
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = login_data
-db = SQLAlchemy(app)
-
+app.config['SECRET_KEY'] = 'mysecretkey'
+app.register_blueprint(auth_bp)
 
 @app.route('/')
 def index():
@@ -17,11 +13,29 @@ def index():
 
 @app.route('/hot-menu')
 def hot_menu_page():
-    return render_template('menu-pages.html')
+    categories = []
+    products = get_data('hot-food')
+    for product in products:
+        categories.append(product.category)
+
+    return render_template(
+        'menu-pages.html', 
+        products=products, 
+        categories=categories
+        )
 
 @app.route('/freeze-menu')
 def freeze_food_page():
-    return render_template('freeze.html')
+    categories = []
+    products = get_data('freeze-food')
+    for product in products:
+        categories.append(product.category)
+
+    return render_template(
+        'freeze.html', 
+        products=products, 
+        categories=categories
+        )
 
 @app.route('/keitering')
 def keitering_page():

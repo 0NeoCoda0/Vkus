@@ -1,15 +1,3 @@
-@font-face {
-    font-family: "CaviarDreams";
-    src: url(fonts/CaviarDreams/CaviarDreams.ttf);
-}
-
-@font-face {
-    font-family: "trebuchetms";
-    src: url(fonts/Trebuchet\ MS/trebuchetms.ttf);
-}
-
-/*------ WIDTH 1600-------*/
-
 @media (orientation:landscape), (max-width: 1600px) {
     .main {
         display: flex;
