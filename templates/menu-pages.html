@@ -3,6 +3,7 @@
 {% block link %}
 <link rel="stylesheet" href="static/css/menu/menu-ico-lighting.css" type="text/css" />
 <link rel="stylesheet" href="static/css/card-style.css" type="text/css" />
+<link rel="stylesheet" href="static/css/modal-window.css" type="text/css" />
 {% endblock %}
 {% block title %}Горячие блюда{% endblock %}
 
@@ -20,7 +21,7 @@
       {% for product in products %}
       {% if product.category == category %}
       <article class="product-card">
-        <img src="{{ product.image }}" alt="" class="img-product">
+        <img src="{{ product.image }}" alt="" class="img-product" data-target="modal-1">
         <div class="price">
           <p><b>{{ product.price|int }} ₽</b></p>
         </div>
@@ -35,4 +36,47 @@
     {% endfor %}
   {% endif %}
 </div>
+
+<div id="modal-1" class="modal">
+  <div class="modal-content">
+    <img src="" class="img-product" alt="Product Image">
+    <h2>Product Name</h2>
+    <p>Product Description</p>
+    <button class="close-btn">&times;</button>
+  </div>
+</div>
+
+<script>
+const images = document.querySelectorAll('[data-target]');
+const modals = {};
+
+images.forEach(image => {
+  const target = image.dataset.target;
+  const modal = document.getElementById(target);
+  modals[target] = modal;
+
+  image.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  modal.querySelector('.close-btn').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    Object.values(modals).forEach(modal => {
+      modal.style.display = 'none';
+    });
+  }
+});
+</script>
+
 {% endblock %}
