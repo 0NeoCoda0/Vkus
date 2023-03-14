@@ -1,40 +1,6 @@
-{% extends "basic/headfoot.html" %}
+{% extends "basic/products-menu.html" %}
 
-
-{% block link %}
+{% block ico_style %}
 <link rel="stylesheet" href="static/css/freeze/freeze-ico-lighting.css" type="text/css" />
-<link rel="stylesheet" href="static/css/card-style.css" type="text/css" />
 {% endblock %}
-
-{% block title %}Полуфабрикаты {% endblock %}
-
-{% block main %}
-<div class="border-table">
-  {% if products %}
-
-    {% for category in categories|unique %}
-    <div class="article-title ">
-      <p>{{ category }}</p>
-    </div>
-    
-    
-    <div class="article-container">
-      {% for product in products %}
-      {% if product.category == category %}
-      <article class="product-card">
-        <img src="{{ product.image }}" alt="" class="img-product">
-        <div class="price">
-          <p><b>{{ product.price|int }}</b> ₽</p>
-        </div>
-        <div class="product-name">
-          <p>{{ product.name.capitalize() }}</p>
-        </div>
-        <div class="add_button"><button class="add">+ Добавить</button></div>
-      </article>
-      {% endif %}
-      {% endfor %}
-    </div>
-    {% endfor %}
-  {% endif %}
-</div>
-{% endblock %}
+{% block title %}Полуфабрикаты{% endblock %}
