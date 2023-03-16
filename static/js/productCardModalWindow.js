@@ -1,7 +1,7 @@
 const images = document.querySelectorAll('.img-product');
 const modal = document.getElementById('modal-1');
 const modalContent = modal.querySelector('.modal-content');
-
+// Чтобы сделать управление стилями гибче, нужно добавить больше запросов к разным селекторам
 
 const modals = {};
 
