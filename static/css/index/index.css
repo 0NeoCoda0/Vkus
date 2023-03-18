@@ -115,8 +115,8 @@ body {
   padding: 0 0px;
 
   /*size*/
-  width: 150px;
-  height: 40px;
+  width: 180px;
+  height: 50px;
 
   /*border*/
   border: 1px solid #fff;
@@ -127,21 +127,16 @@ body {
   transition: box-shadow, 0.4s linear;
   transition: border, 0.4s linear;
   cursor: pointer;
+
+  /*text*/
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .button:hover {
   box-shadow: 0px 0px 6px goldenrod;
   border: 1px solid goldenrod;
-}
-
-.button>p {
-  color: #fff;
-
-  font-size: 10px;
-}
-
-a {
-  text-decoration: none;
 }
 
 .div-button {

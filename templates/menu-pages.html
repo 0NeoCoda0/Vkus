@@ -4,3 +4,11 @@
 <link rel="stylesheet" href="static/css/menu/menu-ico-lighting.css" type="text/css" />
 {% endblock %}
 {% block title %}Горячие блюда{% endblock %}
+
+{% block flash %}
+{% if messages %}
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+{% endif %}
+{% endblock %}

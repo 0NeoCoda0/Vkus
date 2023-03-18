@@ -25,13 +25,9 @@
         <h1 class="trebuchetms">ОТКРОЙ ЭСТЕТИКУ ВАЙНАХСКОЙ КУХНИ</h1>
       </div>
       <div class="div-button">
-        <a href="{{ url_for('hot_menu_page') }}">
-          <button class="button">
-            <p class="dream-font">
-              ПОСМОТРЕТЬ МЕНЮ
-            </p>
-          </button>
-        </a>
+      <form action="/user/new" method="POST">
+        <input type="submit" class="button dream-font" value="Посмотреть меню!">
+      </form>
       </div>
     </main>
   </div>
