@@ -18,7 +18,7 @@ class FlaskApplication(BaseApplication):
 
 if __name__ == '__main__':
     options = {
-        'bind': '158.160.41.120:8000',
+        'bind': '127.0.0.1:5000',
         'workers': 2,
     }
     FlaskApplication(app, options).run()
