@@ -336,7 +336,7 @@ div.social-ico {
     }
 }
 
-@media (orientation:portrait) and (max-width: 560px) {
+@media (orientation:portrait) and (max-width: 570px) {
 
     /*Выравнивание инфо-контейнеров в столбик по центру*/
     div.work-time-window {

@@ -66,8 +66,8 @@ article.product-card {
     margin: 0;
     padding: 0;
     align-items: center;
-    width: 300px;
-    height: 200px;
+    width: var(--img-width);
+    height: var(--img-height);
     cursor: pointer;
 
 }
@@ -102,7 +102,11 @@ div.add_button {
     justify-content: center;
 }
 
-button.add {
+.product_button {
+    width: 90%;
+}
+
+.add {
     padding: 0;
 
     width: 100%;
@@ -122,7 +126,7 @@ button.add {
     cursor: pointer;
 }
 
-button.add:hover {
+.add:hover {
     border: 1px solid goldenrod;
     box-shadow: 0 0 2px goldenrod;
 }
@@ -136,12 +140,14 @@ button.add:hover {
         margin-left: 0;
     }
 
+    
+
     div.border-table {
         padding: 0 5vw;
     }
 
     article.product-card {
-        width: 120px;
+        width: 150px;
         height: 190px;
     }
 
@@ -153,6 +159,11 @@ button.add:hover {
         height: 30px;
         width: 120px;
         font-size: 14px;
+    }
+
+    .product-card>img {
+        width: calc(var(--img-width)/2);
+        height: calc(var(--img-height)/2);
     }
 }
 
@@ -166,6 +177,11 @@ button.add:hover {
         padding: 5px;
         font-size: 22px;
 
+    }
+
+    div.article-container {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     div.border-table {

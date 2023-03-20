@@ -1,53 +1,98 @@
 {% extends "basic/headfoot.html" %}
 
 {% block body_style %}
-<link rel="stylesheet" href="static/css/card-style.css" type="text/css" />
-<link rel="stylesheet" href="static/css/modal-window.css" type="text/css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card-style.css') }}" type="text/css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/modal-window.css') }}" type="text/css" />
+<!--link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"-->
 {% endblock %}
 
 
 {% block main%}
+
 <div class="border-table">
   {% if products %}
 
-    {% for category in categories %}
-    <div class="article-title ">
-      <p>{{ category }}</p>
-    </div>
-    
-    
-    <div class="article-container">
-      {% for product in products %}
-      {% if product.category == category %}
-      <article class="product-card">
-        <img src="{{ product.image }}" 
-        alt="" 
-        class="img-product" 
-        data-target="modal-1"
+  {% for category in categories %}
+  <div class="article-title ">
+    <p>{{ category }}</p>
+  </div>
+
+
+  <div class="article-container" >
+    {% for product in products %}
+    {% if product.category == category %}
+    <article class="product-card">
+      <img src="../{{ product.image }}" alt="" class="img-product" data-target="modal-1"
         data-id="{{ product.product_id }}">
-        <div class="price">
-          <p><b>{{ product.price|int }} ₽</b></p>
-        </div>
-        <div class="product-name">
-          <p>{{ product.name }}</p>
-        </div>
-        <div class="add_button"><button class="add">+ Добавить</button></div>
-      </article>
-      {% endif %}
-      {% endfor %}
-    </div>
+      <div class="price">
+        <p><b>{{ product.price|int }} ₽</b></p>
+      </div>
+      <div class="product-name">
+        <p>{{ product.name }}</p>
+      </div>
+      <div class="add_button">
+        <form class="product_button" action="{{ url_for('user_session.add_product', id=product.product_id) }}"
+          method="POST">
+          <input class="add" type="submit" value="+ Добавить">
+        </form>
+      </div>
+    </article>
+    {% endif %}
     {% endfor %}
+  </div>
+  {% endfor %}
   {% endif %}
 </div>
 
 <!--Модальное окно с подробной информацией о продукте, которое отображается при нажатии на изображение карточки товара-->
 <div id="modal-1" class="modal">
   <div class="modal-window">
-  <div class="modal-content"></div>
-  <button class="close-btn">&times;</button>
+    <div class="modal-content"></div>
+    <button class="close-btn">&times;</button>
   </div>
 </div>
 
 <script src="../static/js/productCardModalWindow.js"></script>
+<!--script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"--></script>
 
 {% endblock %}
+
+<!--Логика:
+  Cначала на станице выбирается категория
+  Каждой категории соответствует свой обработчик, который возвращает список продуктов.
+  Затем загружается набор карточек, которые этой категории соответствуют
+  -->
+
+<!--div class="categories-grid">
+  {% for category in categories %}
+  <form action="{{ url_for('product_data.return_product_list', category=category, type=type) }}" class="category-place"
+    method="GET">
+    <button class="category-get-button" type="submit">{{ category }}</button>
+  </form>
+  {% endfor %}
+</div>
+
+<div class="article-container js-flickity" data-flickity-options='{ 
+      "cellAlign": "center", 
+      "contain": true, 
+      "wrapAround": true,
+      "groupCells": true}'>
+  {% for product in products %}
+  <article class="product-card">
+    <img src="../{{ product.image }}" alt="" class="img-product" data-target="modal-1" data-id="{{ product.product_id }}">
+    <div class="price">
+      <p><b>{{ product.price|int }} ₽</b></p>
+    </div>
+    <div class="product-name">
+      <p>{{ product.name }}</p>
+    </div>
+    <div class="add_button">
+      <form class="product_button" action="{{ url_for('user_session.add_product', id=product.product_id) }}"
+        method="POST">
+        <input class="add" type="submit" value="+ Добавить">
+      </form>
+    </div>
+  </article>
+
+  {% endfor %}
+</div-->

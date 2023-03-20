@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, redirect, url_for, flash
 from sqlalchemy.orm import sessionmaker
-
+import json
 from models.db_requests import engine
 from models.products import Product
 
@@ -27,3 +27,7 @@ def return_product_data(product_id):
         'calories': product.calories
     }
     return jsonify(product_info)
+
+@product_data.route('/list/<category>/<type>')
+def return_product_list(category, type):
+    return redirect(url_for('menu_page', category=category, type=type))
