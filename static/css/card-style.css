@@ -194,13 +194,24 @@ div.add_button {
     }
 
     div.product-name>p {
-        font-size: 14px;
+        font-size: 15px;
     }
 
-    div.add_button>button {
+    .price>p>b {
+        font-size: 20px;
+    }
+
+    div.price>p {
+        margin: 0;
+    }
+    
+    div.add_button {
+        margin-bottom: 5px;
+    }
+
+    .add {
         height: 30px;
-        width: 120px;
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .product-card>img {

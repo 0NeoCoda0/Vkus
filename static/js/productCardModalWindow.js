@@ -22,12 +22,14 @@ images.forEach(image => {
         modalContent.innerHTML = `
           <h2>${product.category}</h2>
           <h3>${product.name}</h3>
-          <img src="${product.image}">
-          <p>${Number(product.price)} ₽</p>
-          <p>${product.weight} кг</p>
-          <p>${product.quantity} шт</p>
-          <p>Тут будет много текста ${product.composition} с описанием так что стоит это учитывать при разработке стиля </p>
-          <p>${product.calories} ккал</p>
+          <img class="modal-img" src="../${product.image}">
+          <p>Описание блюда. Его состав, способ приготовления, история происхождения. Тут можно ближе познакомиться с товаром и захотеть его ${product.composition}</p>
+          <div class="about-products-number">
+            <p>${Number(product.price)} ₽</p>
+            <p>${product.weight} кг</p>
+            <p>${product.quantity} шт</p>
+            <p>${product.calories} ккал</p>
+          </div>
         `;
 
         // Открываем модальное окно

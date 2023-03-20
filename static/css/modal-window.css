@@ -6,6 +6,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.699);
+    
     display: none;
     justify-content: center;
     align-items: center;
@@ -15,11 +16,12 @@
     padding: 20px;
     overflow: auto;
     text-align: center;
+    color:rgba(0, 0, 0, 0.699)
   }
 
   .modal-window {
     position: relative;
-    background-color: #ffffff;
+    background-color: #dfdede;
     border-radius: 20px;
     max-width: 350px;
     max-height: 80vh;
@@ -36,3 +38,16 @@
     outline: none;
     cursor: pointer;
   }
+
+.modal-img {
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.modal-content>h2 {
+  margin-bottom: 0;
+}
+
+.modal-content>h3 {
+  margin-top: 5px;
+}
