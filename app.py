@@ -1,8 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from routes.return_product_data import product_data
 from routes.user_session import user_session
-from models.db_requests import get_data, get_product_list
-import json
+from models.db_requests import get_product_type, get_product_list
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'civ3i4l5i6a7z1t3i31#$%41nner2'
@@ -19,7 +19,7 @@ def index():
 def menu_page(type):
     #Получение и формирование списка категорий
     categories = []
-    products = get_data(type)
+    products = get_product_type(type)
     for product in products:
         if product.category not in categories:
             categories.append(product.category)
@@ -45,6 +45,9 @@ def contacts_page():
 def bucket_page():
     return render_template('bucket.html')
 
+@app.route('/.well-kwown/acme-challenge')
+def validate_sertificate():
+    return render_template('WET_j_juABSRwmEvWDydVQ1cVqlBpg5OWUT44tAVRck.html')
 
 '''
 @app.route('/menu/<type>')

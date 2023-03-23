@@ -31,7 +31,7 @@
         <p>{{ product.name }}</p>
       </div>
       <div class="add_button">
-        <form class="product_button" action="{{ url_for('user_session.add_product', id=product.product_id) }}"
+        <form class="product_button" action="{{ url_for('user_session.add_product', id=product.product_id, type=type) }}"
           method="POST">
           <input class="add" type="submit" value="+ Добавить">
         </form>
