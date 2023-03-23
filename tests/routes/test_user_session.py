@@ -1,39 +1,47 @@
-from routes.user_session import add_product
-from app import app
+import pytest
+from config_app import TestingConfig
+from app import create_app
 
+@pytest.fixture()
+def app():
+    app = create_app(TestingConfig)
+    yield app
 
-def test_add_product():
-    test_session = {}
+@pytest.fixture()
+def client(app):
+    return app.test_client()
+
+def test_add_product(client):
     product_id = 3
-    type = 'freeze-food'
-    with app.app_context():
-        test_session['cart'] = add_product(product_id, type)
-    assert test_session['cart'] == {
-        3 : {
-        'count': 1,
-        'name': 'ракушки',
-        'price': 600.00,
-        'weight': None,
-        'quantity': None,
-        'image': 'static/images/menu/freeze/ракушки с мясом.jpg',
-        'category': 'ГАЛУШКИ',
-        'composition': None,
-        'calories': None
+    food_type = 'freeze-food'
+    with client.session_transaction() as session:
+        session['cart'] = {}
+        client.post(f"/add_product/{product_id}/{food_type}")
+        assert session['cart'] == {
+            3 : {
+            'count': 1,
+            'name': 'ракушки',
+            'price': 600.00,
+            'weight': None,
+            'quantity': None,
+            'image': 'static/images/menu/freeze/ракушки с мясом.jpg',
+            'category': 'ГАЛУШКИ',
+            'composition': None,
+            'calories': None
+            }
         }
-    }
-    with app.app_context():
-        
-        test_session['cart'] = add_product(product_id, type)
-    assert test_session['cart'] == {
-        3 : {
-        'count': 2,
-        'name': 'ракушки',
-        'price': 600.00,
-        'weight': None,
-        'quantity': None,
-        'image': 'static/images/menu/freeze/ракушки с мясом.jpg',
-        'category': 'ГАЛУШКИ',
-        'composition': None,
-        'calories': None
+
+        client.post(f"/add_product/{product_id}/{food_type}")
+        assert session['cart'] == {
+            3 : {
+            'count': 2,
+            'name': 'ракушки',
+            'price': 600.00,
+            'weight': None,
+            'quantity': None,
+            'image': 'static/images/menu/freeze/ракушки с мясом.jpg',
+            'category': 'ГАЛУШКИ',
+            'composition': None,
+            'calories': None
+            }
         }
-    }

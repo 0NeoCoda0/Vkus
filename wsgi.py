@@ -1,4 +1,4 @@
-from app import app
+from main import app
 from gunicorn.app.base import BaseApplication
 
 class FlaskApplication(BaseApplication):

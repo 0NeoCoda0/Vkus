@@ -13,5 +13,4 @@ def new_user_session():
 
 @user_session.route('/add_product/<id>/<type>', methods=['POST'])
 def add_product(id, type):
-    
     return redirect(url_for('menu_page', type=type))

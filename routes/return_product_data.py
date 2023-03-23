@@ -1,12 +1,6 @@
-from flask import Blueprint, jsonify, redirect, url_for, flash
-from sqlalchemy.orm import sessionmaker
-import json
-from models.db_requests import engine
+from flask import Blueprint, jsonify, redirect, url_for
+from app import db 
 from models.products import Product
-
-
-Session = sessionmaker(bind=engine)
-session = Session()
 
 product_data = Blueprint('product_data', __name__, url_prefix='/product')
 
@@ -15,7 +9,7 @@ def return_product_data(product_id):
     """
     Функция возвращает список параметров продукта по запрошенному идентификатору.
     """
-    product = session.query(Product).get(product_id)
+    product = db.session.query(Product).get(product_id)
     product_info = {
         'name': product.name,  
         'price': product.price,
