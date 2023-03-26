@@ -21,3 +21,6 @@ class Product(db.Model):
             if hasattr(self, key):
                 setattr(self, key, value)
         db.session.commit()
+
+    def some_test_func(self):
+        pass
