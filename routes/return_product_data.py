@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, redirect, url_for
-from app import db 
-from models.products import Product
+from create_app import db 
+from models.entities.products import Product
 
 product_data = Blueprint('product_data', __name__, url_prefix='/product')
 

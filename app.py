@@ -1,20 +1,49 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
+from flask import render_template
 
-db = SQLAlchemy()
+from config_app import Config
+from create_app import create_app
+from models.db_requests import get_products_type
 
-def create_app(config_object_name):
-    from routes.return_product_data import product_data
-    from routes.user_session import user_session
-    
-    app = Flask(__name__, template_folder='templates', static_folder='static')
-    app.config.from_object(config_object_name)
+app = create_app(Config)
 
-    app.register_blueprint(product_data)    
-    app.register_blueprint(user_session)
 
-    db.init_app(app)
+@app.route('/')
+def index():
+    return render_template('index.html')
 
-    with app.app_context():
-        db.create_all()
-    return app
+
+@app.route('/menu/<type>')
+def menu_page(type):
+    # Получение и формирование списка категорий
+    categories = []
+    products = get_products_type(type)
+    for product in products:
+        if product.category not in categories:
+            categories.append(product.category)
+
+    return render_template(
+        f'{type}.html',
+        products=products,
+        categories=categories,
+        type=type
+    )
+
+
+@app.route('/keitering')
+def keitering_page():
+    return render_template('keitering.html')
+
+
+@app.route('/contacts')
+def contacts_page():
+    return render_template('contacts.html')
+
+
+@app.route('/bucket')
+def bucket_page():
+    return render_template('bucket.html')
+
+
+@app.route('/.well-kwown/acme-challenge')
+def validate_sertificate():
+    return render_template('WET_j_juABSRwmEvWDydVQ1cVqlBpg5OWUT44tAVRck.html')

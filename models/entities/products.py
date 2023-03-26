@@ -1,9 +1,9 @@
-from sqlalchemy import Column, Integer, String, Numeric, LargeBinary, ARRAY
-from sqlalchemy.orm import declarative_base 
+from sqlalchemy import ARRAY, Column, Integer, Numeric, String
 
-Base = declarative_base()
+from create_app import db
 
-class Product(Base):
+
+class Product(db.Model):
     __tablename__ = 'products'
     product_id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(255), nullable=False)
@@ -15,3 +15,9 @@ class Product(Base):
     type = Column(String(255), nullable=False)
     composition = Column(ARRAY(String))
     calories = Column(Integer)
+
+    def update(self, data):
+        for key, value in data.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
+        db.session.commit()

@@ -13,7 +13,7 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 # Чтение данных из CSV файла и вставка их в базу данных
-with open('hot-food.csv', 'r') as f:
+with open('utilits/freeze-food.csv', 'r') as f:
     reader = csv.reader(f, delimiter=',')
     next(reader)  # пропускаем заголовок файла
     for row in reader:

@@ -1,21 +1,19 @@
 from models.entities.products import Product
 from create_app import db
 
-
-def get_products_type(type):
+def get_product_type(type):
     products = db.session.query(Product).filter_by(type=type).all()
     return products
 
 
-def get_products_list(category):
+def get_product_list(category):
     product_list = db.session.query(Product).filter_by(category=category).all()
     return product_list
-
 
 def get_product_info(id):
     product = db.session.get(Product, id)
 
-    product_info = {
+    product_list = {
         'name': product.name,
         'price': product.price,
         'weight': product.weight,
@@ -25,4 +23,4 @@ def get_product_info(id):
         'composition': product.composition,
         'calories': product.calories
     }
-    return product_info
+    return product_list
