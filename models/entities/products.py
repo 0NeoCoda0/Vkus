@@ -23,4 +23,5 @@ class Product(db.Model):
         db.session.commit()
 
     def some_test_func(self):
+        print('next this text again only for test pull request')
         pass
