@@ -1,15 +1,19 @@
 const addButtons = document.querySelectorAll('.add_button .product_button');
 
 addButtons.forEach((button) => {
-  button.addEventListener('click', (event) => {
+  button.addEventListener('submit', (event) => {
     event.preventDefault(); // отменяем стандартное поведение формы
 
-    const form = event.target.closest('form');
+    const form = event.target;
     const url = form.action;
 
     // отправляем POST запрос на сервер с помощью AJAX
     fetch(url, {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
     })
       .then((response) => response.json()) // парсим JSON ответ от сервера
       .then((data) => {
