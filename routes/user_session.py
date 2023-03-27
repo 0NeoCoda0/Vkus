@@ -1,4 +1,4 @@
-from flask import Blueprint, session, redirect, url_for, flash
+from flask import Blueprint, session, redirect, url_for, flash, jsonify
 from models.db_requests import get_product_info
 
 
@@ -13,4 +13,5 @@ def new_user_session():
 
 @user_session.route('/add_product/<id>/<type>', methods=['POST'])
 def add_product(id, type):
-    return redirect(url_for('menu_page', type=type))
+    redirect_url = url_for('menu_page', type=type)
+    return jsonify({'redirectUrl': redirect_url})
