@@ -14,4 +14,4 @@ def new_user_session():
 @user_session.route('/add_product/<id>/<type>', methods=['POST'])
 def add_product(id, type):
     redirect_url = request.referrer # получаем полный URL-адрес предыдущей страницы
-    return jsonify({'redirectUrl': redirect_url}))
+    return jsonify({'redirectUrl': redirect_url})
