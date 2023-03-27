@@ -14,8 +14,7 @@ addButtons.forEach((button) => {
       .then((response) => response.json()) // парсим JSON ответ от сервера
       .then((data) => {
         // производим редирект на указанную страницу без перезагрузки
-        window.history.pushState({}, '', data.redirectUrl);
-        window.dispatchEvent(new PopStateEvent('popstate'));
+        window.location.replace(data.redirectUrl);
       })
       .catch((error) => {
         console.log('Ошибка при отправке запроса', error);
