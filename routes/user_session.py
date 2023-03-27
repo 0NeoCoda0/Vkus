@@ -1,4 +1,4 @@
-from flask import Blueprint, session, redirect, url_for, flash, jsonify
+from flask import Blueprint, session, redirect, url_for, flash, jsonify, request
 from models.db_requests import get_product_info
 
 
@@ -13,5 +13,5 @@ def new_user_session():
 
 @user_session.route('/add_product/<id>/<type>', methods=['POST'])
 def add_product(id, type):
-    redirect_url = url_for('menu_page', type=type)
-    return jsonify({'redirectUrl': redirect_url})
+    redirect_url = request.referrer # получаем полный URL-адрес предыдущей страницы
+    return jsonify({'redirectUrl': redirect_url}))
