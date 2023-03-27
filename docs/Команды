@@ -1,2 +1,3 @@
 pg_dump vkus > vkus.psql - выгрузить БД
-pg_restore -d vkus vkus.psql - восстановить БД из файла 
+pg_restore -d vkus vkus.psql - восстановить БД из файла. Работает с со специальными файлами psql.
+psql vkus < vkus.psql
