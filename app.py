@@ -47,3 +47,7 @@ def bucket_page():
 @app.route('/.well-kwown/acme-challenge')
 def validate_sertificate():
     return render_template('WET_j_juABSRwmEvWDydVQ1cVqlBpg5OWUT44tAVRck.html')
+
+@app.route('/yandex_f559e94d79b922d3.html')
+def chech_yandex():
+    return render_template ('yandex_f559e94d79b922d3.html')
