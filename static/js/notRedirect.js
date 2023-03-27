@@ -1,10 +1,10 @@
 const addButtons = document.querySelectorAll('.add_button .product_button');
 
 addButtons.forEach((button) => {
-  button.addEventListener('submit', (event) => {
+  button.addEventListener('click', (event) => {
     event.preventDefault(); // отменяем стандартное поведение формы
 
-    const form = event.target;
+    const form = event.target.closest('form');
     const url = form.action;
 
     // отправляем POST запрос на сервер с помощью AJAX
